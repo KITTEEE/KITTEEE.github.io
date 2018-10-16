@@ -92,7 +92,7 @@
 	
 		<i class="iconfont icon-words"></i>
 		<span>
-			2073
+			2347
 		</span>
 	
 </div>
@@ -139,7 +139,18 @@
 <li>若特别关注性能，可以选用数组</li>
 </ul>
 <p><br></p>
-<h3 id="思考：二维数组的寻址公式是怎么样的？"><a href="#思考：二维数组的寻址公式是怎么样的？" class="headerlink" title="思考：二维数组的寻址公式是怎么样的？"></a>思考：二维数组的寻址公式是怎么样的？</h3><p>解答：</p>
+<h3 id="思考："><a href="#思考：" class="headerlink" title="思考："></a>思考：</h3><p><strong>为什么数组从 0 开始编号？</strong></p>
+<p>解答：</p>
+<p>如果用 a 来表示数组的首地址，a[0] 就是偏移为 0 的位置，a[k]表示偏移 k 个 data_type_size 的位置，a[k]的地址计算就是这样的</p>
+<blockquote>
+<p>a[k]_address = base_address + k * data_type_size</p>
+</blockquote>
+<p>而如果从 1 开始计数，则为：</p>
+<blockquote>
+<p>a[k]_address = base_address + (k-1) * data_type_size</p>
+</blockquote>
+<p>从 1 开始计数多了一次减法操作，对 CPU 来说就多了一次减法指令，数组作为最基础的数据结构，为了使效率优化达到极致，所以选择从 0 开始编号 (也有一定的历史因素)<br><br><br><strong>二维数组的寻址公式是怎么样的？</strong></p>
+<p>解答：</p>
 <p>对于一个 m*n 的二维数组，a[i][j]的寻址公式为：<br>address = base_address + ( i*n + j ) * data_type_size</p>
   	
 					
@@ -264,7 +275,7 @@
 				CONTENT
 			</p>
 			<div class="toc-list">
-				<ol class="toc-inner"><li class="toc-inner-item toc-inner-level-3"><a class="toc-inner-link" href="#一、什么是数组"><span class="toc-inner-text">一、什么是数组</span></a></li><li class="toc-inner-item toc-inner-level-3"><a class="toc-inner-link" href="#二、数组是如何实现随机访问的"><span class="toc-inner-text">二、数组是如何实现随机访问的</span></a></li><li class="toc-inner-item toc-inner-level-3"><a class="toc-inner-link" href="#三、低效的插入和删除操作"><span class="toc-inner-text">三、低效的插入和删除操作</span></a></li><li class="toc-inner-item toc-inner-level-3"><a class="toc-inner-link" href="#四、警惕数组越界"><span class="toc-inner-text">四、警惕数组越界</span></a></li><li class="toc-inner-item toc-inner-level-3"><a class="toc-inner-link" href="#五、容器能否完全替代数组？"><span class="toc-inner-text">五、容器能否完全替代数组？</span></a></li><li class="toc-inner-item toc-inner-level-3"><a class="toc-inner-link" href="#思考：二维数组的寻址公式是怎么样的？"><span class="toc-inner-text">思考：二维数组的寻址公式是怎么样的？</span></a></li></ol>
+				<ol class="toc-inner"><li class="toc-inner-item toc-inner-level-3"><a class="toc-inner-link" href="#一、什么是数组"><span class="toc-inner-text">一、什么是数组</span></a></li><li class="toc-inner-item toc-inner-level-3"><a class="toc-inner-link" href="#二、数组是如何实现随机访问的"><span class="toc-inner-text">二、数组是如何实现随机访问的</span></a></li><li class="toc-inner-item toc-inner-level-3"><a class="toc-inner-link" href="#三、低效的插入和删除操作"><span class="toc-inner-text">三、低效的插入和删除操作</span></a></li><li class="toc-inner-item toc-inner-level-3"><a class="toc-inner-link" href="#四、警惕数组越界"><span class="toc-inner-text">四、警惕数组越界</span></a></li><li class="toc-inner-item toc-inner-level-3"><a class="toc-inner-link" href="#五、容器能否完全替代数组？"><span class="toc-inner-text">五、容器能否完全替代数组？</span></a></li><li class="toc-inner-item toc-inner-level-3"><a class="toc-inner-link" href="#思考："><span class="toc-inner-text">思考：</span></a></li></ol>
 			</div>
 		</div>
 	</div>
