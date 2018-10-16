@@ -1,0 +1,362 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  
+  
+  <title>  数据结构与算法：数组 |   Kite Yiu </title>
+
+ 
+  
+    <link rel="icon" href="/images/favicon.jpg">
+  
+
+
+  <link rel="stylesheet" href="/nayo.min.css"> 
+</head>  
+  <body>   
+    
+      <header class="header">
+	
+  <nav class="header-nav">        
+
+    <span class="iconfont icon-menu mobile-toggle"></span>   	
+
+    <div class="header-logo">
+      <a href="/">
+        <img class="header-logo-img" src="/images/logo.jpg">
+      </a>
+    </div>
+
+    <div class="header-menu">          
+              
+          
+            <a class="header-menu-link" id="header-menu-home" href="/">
+              <i class="iconfont icon-home">  
+            </i></a>     
+          
+              
+          
+            <a class="header-menu-link" id="header-menu-archives" href="/archives">
+              <i class="iconfont icon-archives">  
+            </i></a>     
+          
+              
+          
+            <a class="header-menu-link" id="header-menu-tags" href="/tags">
+              <i class="iconfont icon-tags">  
+            </i></a>     
+          
+              
+          
+            <a class="header-menu-link" id="header-menu-about" href="/about">
+              <i class="iconfont icon-about">  
+            </i></a>     
+          
+              
+          
+              <a class="header-menu-link" id="header-menu-search">
+                <i class="iconfont icon-search">  
+              </i></a>
+          
+                  
+    </div>  
+    
+  </nav>
+</header>
+
+   
+
+      <div class="container">       
+          
+          
+            <section class="main">  
+          
+
+          <article class="post">
+  
+	<div class="post-header">
+
+	<p class="post-title">	
+		数据结构与算法：数组
+	</p>
+			
+
+	<div class="meta-info">	
+	<span>
+		10月 16, 2018
+	</span>
+
+	
+	
+		<i class="iconfont icon-words"></i>
+		<span>
+			2073
+		</span>
+	
+</div>
+
+</div> 
+	 
+
+	  <div class="typo post-content slideDownMin">
+
+		
+
+			
+					<p><img src="/2018/10/16/数据结构与算法-数组/banner.jpg" alt="Alt text"><br>为什么数组要从 0 开始编号，而不是从 1 开始？<br><a id="more"></a><br><br></p>
+<h3 id="一、什么是数组"><a href="#一、什么是数组" class="headerlink" title="一、什么是数组"></a>一、什么是数组</h3><blockquote>
+<p>数组 (Array) 是一种线性表数据结构，它用一组连续的内存空间，来存储一组相同类型的数据</p>
+</blockquote>
+<p>上面这句话中说到了数组的两个特性，第一个是 <strong>「线性表」</strong>，第二个是 <strong>「连续的内存空间」</strong>。</p>
+<p>「线性表」指的是数据排成一条线一样的数据结构，且上面的数据最多只有前和后两个方向，除了数组，链表、队列、栈 等都是线性表结构。<br><img src="/2018/10/16/数据结构与算法-数组/1.jpg" alt="Alt text"><br>与线性表相对应的是非线性表结构，也就是结构里的数据之间不只有简单的前后关系，如图、二叉树、堆等。<br><img src="/2018/10/16/数据结构与算法-数组/2.jpg" alt="Alt text"></p>
+<p>「连续的内存空间和相同类型的数据」指的是数组中的数据在内存中的存储是连续的，因为这个特性所以数组能够实现「随机访问」，但也因此数组的插入删除等操作变得低效。</p>
+<p><br></p>
+<h3 id="二、数组是如何实现随机访问的"><a href="#二、数组是如何实现随机访问的" class="headerlink" title="二、数组是如何实现随机访问的"></a>二、数组是如何实现随机访问的</h3><p>拿一个长度为 10 的 int 类型数组 int a[] 举例，在计算机中，计算机会给 a 数组 分配一块连续的内存空间 (如下图)，其中，计算机会给每个内存单元分配一个地址，需要访问到数组中的元素的时候，计算机会通过「寻址公式」来计算出数据存储的内存地址，再通过地址来访问内存中的数据。</p>
+<p>寻址公式：<code>a[i]_address = base_address + i * data_type_size</code></p>
+<p>其中，base_address 为数组内存块的首地址，data_type_size 为数组的数据类型长度，如 int 的数据类型长度为 4 。 </p>
+<p><img src="/2018/10/16/数据结构与算法-数组/3.jpg" alt="Alt text"></p>
+<p><br></p>
+<h3 id="三、低效的插入和删除操作"><a href="#三、低效的插入和删除操作" class="headerlink" title="三、低效的插入和删除操作"></a>三、低效的插入和删除操作</h3><p>数组为了保持内存的连续性，因此它的插入和删除操作变得十分低效。</p>
+<p>假设有一个长度为 n 的数组，我们要在第 k 位中插入一个数据，为了保持内存的连续性，就必须将第 k 为后的 k-n 个数据往后移动一位。</p>
+<p>如果在数组的末尾插入元素，数据无需移动，最好情况时间复杂度为 O(1)，若在数组首位插入元素，则所有元素都必须往后移动一位，最坏情况时间复杂度为 O(n)，由于每个位置插入元素的概率是一样的，因此平均时间时间复杂度为 (1+2+…+n)/n = O(n) 。</p>
+<p>而数组的删除操作与插入操作类似，删除数组末尾元素最好时间复杂度为 O(1)，删除数组的首元素最坏时间复杂度为 O(n)，平均时间复杂度也为 O(n)。</p>
+<p><strong>实际上，在某些场景中，我们并不需要一定追求数据的连续性。</strong></p>
+<p>例如删除操作，假如数组 a[10] 中存储了 a~h 一共 8 个元素，我们要依次删除 a、b、c 三个元素，为了避免 d~h 这几个数据被搬运三次，我们可以先记录下已经删除的数据，每次删除数据并不是真正地搬移数据，只是记录数据已经被删除，当数组中没有更多空间存储数据时，如果我们将这三次删除操作集中在一起执行，触发一次真正的删除操作，这样删除的效率就会高效很多。这也是 JVM 中的 <strong>标记清除垃圾回收算法</strong> 的核心思想。</p>
+<p><br></p>
+<h3 id="四、警惕数组越界"><a href="#四、警惕数组越界" class="headerlink" title="四、警惕数组越界"></a>四、警惕数组越界</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> arr[<span class="number">3</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="keyword">for</span>(; i&lt;=<span class="number">3</span>; i++)&#123;</span><br><span class="line">        arr[i] = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"hello world\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这段代码的运行结果不是打印三次 hello world ，而是打印无限次 hello world。因为数组大小为 3 ，而由于 for 循环中的条件为 i &lt;= 3 ，当 i = 3 时，数组 a[3] 访问越界。</p>
+<p>在 C 语言中，只要不是访问受限的内存，所有的内存空间都是可以访问的，根据前面的寻址公式，a[3] 也会被定位到某块不属于数组的内存地址上，而这个地址刚好是存储变量 i 的内存地址，因此 a[3]=0 就相当于 i = 0，计算机访问到了数组首元素的地址，导致了代码的无限循环。</p>
+<p>因为访问数组本身就是在访问一段连续的内存，只要通过寻址公式的得到的内存地址是可用的，程序就不会报错误，所以经常会出现一些奇怪的逻辑错误问题。数组越界在 C 语言中是一种未决行为，编译器也没有规定在数组越界时该如何处理。但也并非所有语言都会把数组越界检查交给程序员来做，像 java 就会做越界检查并抛出错误。</p>
+<p><br></p>
+<h3 id="五、容器能否完全替代数组？"><a href="#五、容器能否完全替代数组？" class="headerlink" title="五、容器能否完全替代数组？"></a>五、容器能否完全替代数组？</h3><p>很多语言为数组类型提供了容器，用 java 的 ArrayList 举例，它封装了很多数组的操作细节，如插入删除及搬运数据等；还有就是支持动态扩容，每当存储空间不够的时候，都会自动将空间扩容到 1.5 倍大小。而数组在定义前就要先指定好大小，为它分配一段连续的内存空间，而当数组的内存空间不够时，就需要申请一块更大的内存空间，再将原来的数据复制过去。这样比较起来，使用容器效率比用数组要高得多。</p>
+<p>数组比较适用的场景：</p>
+<ul>
+<li>若数据大小已知，且涉及的数据操作比较简单，可以用数组。</li>
+<li>对于平常的业务开发，使用容器便足够，虽然只损耗一点点性能。对于非常底层的开发，性能的优化需要做到极致，这时数组会优于容器。</li>
+<li>表示多维数组时，数组往往比容器更加客观。</li>
+<li>若特别关注性能，可以选用数组</li>
+</ul>
+<p><br></p>
+<h3 id="思考：二维数组的寻址公式是怎么样的？"><a href="#思考：二维数组的寻址公式是怎么样的？" class="headerlink" title="思考：二维数组的寻址公式是怎么样的？"></a>思考：二维数组的寻址公式是怎么样的？</h3><p>解答：</p>
+<p>对于一个 m*n 的二维数组，a[i][j]的寻址公式为：<br>address = base_address + ( i*n + j ) * data_type_size</p>
+  	
+					
+	  </div>     
+	  
+
+	<div class="post-footer">
+
+  <div class="post-footer-other">
+      <span class="post-footer-item">
+        
+
+
+
+
+<span class="donate-btn">
+	<span class="iconfont icon-donate"></span>
+</span>
+
+
+<div id="donate-box" class="sildeUpMin">
+
+	<span class="donate-cancel iconfont icon-cancel"></span>
+
+	<div class="donate-img-box">
+		<img id="donate-qr-wechat" class="noLazyLoad donate-img lazyload" src="/images/placeholder.png" alt="No Donate Image!" data-src="/images/donate1.jpg">	
+		<img id="donate-qr-alipay" class="noLazyLoad donate-img lazyload" src="/images/placeholder.png" alt="No Donate Image!" data-src="/images/donate2.jpg">	
+	</div>
+
+	<span class="donate-word">or buy me a cup of tea</span>
+
+	<div class="donate-list">
+		<span class="iconfont icon-donate-wechat"></span>
+		<span class="iconfont icon-donate-alipay"></span>
+	</div>
+
+</div>
+
+ 
+      </span>           
+      <span class="post-footer-item">
+        
+	
+<script id="-mob-share" src="http://f1.webshare.mob.com/code/mob-share.js?appkey=21d601593a1de"></script>
+	
+	<span class="share-btn">
+	<span class="iconfont icon-share"></span>
+	</span>
+
+
+	<div class="-mob-share sildeUpMin">
+		<div class="-mob-inner">
+		   			             
+            <a class="iconfont icon-share-weixin -mob-share-link"></a>		
+     	   			             
+            <a class="iconfont icon-share-weibo -mob-share-link"></a>		
+     	   			             
+            <a class="iconfont icon-share-twitter -mob-share-link"></a>		
+     	   			             
+            <a class="iconfont icon-share-google -mob-share-link"></a>		
+     	   
+		</div>
+	</div>	
+
+      </span>           
+  </div>  
+
+  <div class="post-footer-meta">
+        	
+
+        
+          <i class="iconfont icon-tag"></i>     
+            <a class="tag-link" href="/tags/数据结构与算法之美/">数据结构与算法之美</a>    
+        	
+  </div>
+
+</div>
+
+
+<nav class="post-footer-nav">
+  
+  
+    <div class="post-footer-link">
+      <a href="/2018/10/09/《三体》中的思想实验(二)：黑暗森林(下)/" id="post-nav-older" class="post-nav-link-wrap">
+        <strong class="post-nav-caption">older</strong>
+        
+          <a class="post-nav-title" href="/2018/10/09/《三体》中的思想实验(二)：黑暗森林(下)/">
+          《三体》中的思想实验(二)：黑暗森林(下)</a>
+      </a>
+    </div>
+  
+</nav>
+ 
+	
+
+
+    <div id="comment">   
+    </div>
+
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+
+    <script src="//unpkg.com/valine@v1.1.8-beta/dist/Valine.min.js"></script>
+
+    <script>
+        new Valine({
+        el: '#comment',
+        notify:false, 
+        verify:false, 
+        app_id: 'NFcUbxltD0wS7eCCGTu5ey8k-gzGzoHsz',
+        app_key: '2IB9EctIUwYFhiMjHXNJJnc9',  
+        path:window.location.pathname, 
+        avatar:'mm' ,
+        guest_info:['nick','mail']
+        });
+    </script>
+	
+</article>
+
+	<div class="toc-container">
+			<div class="toc-sidebar">
+			<p class="toc-title">
+				CONTENT
+			</p>
+			<div class="toc-list">
+				<ol class="toc-inner"><li class="toc-inner-item toc-inner-level-3"><a class="toc-inner-link" href="#一、什么是数组"><span class="toc-inner-text">一、什么是数组</span></a></li><li class="toc-inner-item toc-inner-level-3"><a class="toc-inner-link" href="#二、数组是如何实现随机访问的"><span class="toc-inner-text">二、数组是如何实现随机访问的</span></a></li><li class="toc-inner-item toc-inner-level-3"><a class="toc-inner-link" href="#三、低效的插入和删除操作"><span class="toc-inner-text">三、低效的插入和删除操作</span></a></li><li class="toc-inner-item toc-inner-level-3"><a class="toc-inner-link" href="#四、警惕数组越界"><span class="toc-inner-text">四、警惕数组越界</span></a></li><li class="toc-inner-item toc-inner-level-3"><a class="toc-inner-link" href="#五、容器能否完全替代数组？"><span class="toc-inner-text">五、容器能否完全替代数组？</span></a></li><li class="toc-inner-item toc-inner-level-3"><a class="toc-inner-link" href="#思考：二维数组的寻址公式是怎么样的？"><span class="toc-inner-text">思考：二维数组的寻址公式是怎么样的？</span></a></li></ol>
+			</div>
+		</div>
+	</div>
+
+          </section> 
+      </div>            
+    
+    <a id="backTop">
+      <span>
+        <i class="iconfont icon-backtotop"></i>
+      </span>
+    </a> 
+
+  
+    
+    <div class="search-container sildeUpMin">
+        <div class="search-header">
+            <input type="text" placeholder="输入你想搜索的" id="search-input" class="search-input">
+            <span class="search-cancel">
+                <i class="iconfont icon-cancel">
+            </i></span>
+        </div>
+        <div id="search-result" class="search-result"></div>
+    </div>
+ 
+     <div class="mobile-menu">      
+
+      
+      <img class="mobile-menu-icon lazyload" src="/images/placeholder.png" data-src="/images/favicon.jpg">   
+      
+
+         
+            
+
+            <a class="mobile-menu-link" href="/">首页
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/archives">归档
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/tags">标签
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/about">关于
+            </a>
+            
+         
+                          
+
+            <a class="mobile-menu-link mobile-menu-search" href="#">搜索 </a>                 
+            
+         
+      
+</div>        
+    
+
+
+
+     
+    
+
+
+
+
+<footer id="footer">	    
+
+		
+		<div class="footer-copyright">
+		&copy;
+		
+		2018		
+	
+		Kite
+		<br>
+
+		Theme By
+		<a href="https://github.com/Lemonreds/hexo-theme-Nayo" target="_blank">Nayo</a>	
+		</div>			
+	 
+</footer>   
+
+  
+
+    <script src="/nayo.bundle.js"></script>           
+  </body>        
+</html>

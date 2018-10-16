@@ -92,7 +92,7 @@
 	
 		<i class="iconfont icon-words"></i>
 		<span>
-			5761
+			5762
 		</span>
 	
 </div>
@@ -105,7 +105,8 @@
 		
 
 			
-					<p><img src="/2018/10/03/数据结构与算法之美-复杂度分析(上)/1.jpg" alt="Alt text"><br><a id="more"></a><br>数据结构与算法本身是为了让代码运行得更快，更省存储空间；那么如何考量一个算法的执行效率？这里就要用到时间、空间复杂度分析。<br><br></p>
+					<p><img src="/2018/10/03/数据结构与算法之美-复杂度分析/1.jpg" alt="Alt text"></p>
+<p>数据结构与算法本身是为了让代码运行得更快，更省存储空间；那么如何考量一个算法的执行效率？这里就要用到时间、空间复杂度分析。<br><a id="more"></a><br><br></p>
 <h3 id="一、为什么需要复杂度分析"><a href="#一、为什么需要复杂度分析" class="headerlink" title="一、为什么需要复杂度分析"></a>一、为什么需要复杂度分析</h3><p>有人会觉得把代码放在实际环境中测试一遍，对结果进行统计和监控就能得到算法准确的执行效率，因此不需要对代码做时间和空间复杂度分析，但其实这种分析方法带有一定的局限性。</p>
 <p><strong>首先，测试结果非常依赖测试环境</strong>，用同一段代码在不同性能的处理器上运行，性能高的处理器的执行速度肯定要比性能低的速度快；在不同的机器上，两段不同的代码执行速度的比较也会有所差别。因此测试环境中硬件的不同会对测试结果有很多的影响。</p>
 <p><strong>其次，测试结果受数据规模的影响很大</strong>，拿排序算法举例，假如输入进一个排序算法的数据是有序的，那么排序算法便不需要做任何操作，执行时间便会非常短；除此之外，对于同一个算法，算法的数据规模不一样，执行时间会有很大的差别，数据规模太小可能无法反应算法的真实性能，比如对于小规模的数据排序，插入排序可能会比快速排序要快得多。</p>
@@ -116,7 +117,7 @@
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">cal</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> j = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (; i &lt;= n; ++i) &#123;</span><br><span class="line">        j = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (; j &lt;= n; ++j) &#123;</span><br><span class="line">            sum = sum + i * j;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>按照刚才的假设，这段代码中第 7、8 行代码循环了 n² 遍，因此代码的总执行时间为 <code>T(n)=(2n²+2n+3)*time</code>，尽管不知道 time 的具体值，我们也能得出，<strong>代码的执行时间 T(n) 与每行代码的执行次数 n 成正比</strong>。</p>
 <p>用大O复杂度表示如下:</p>
-<p><img src="/2018/10/03/数据结构与算法之美-复杂度分析(上)/2.jpg" alt="Alt text"></p>
+<p><img src="/2018/10/03/数据结构与算法之美-复杂度分析/2.jpg" alt="Alt text"></p>
 <blockquote>
 <p>其中 T(n) 表示代码执行时间，n 表示数据的规模，f(n) 表示每行代码的执行次数总和（如上述的 2n+3 ），O 表示代码执行时间 T(n) 与 f(n) 表达式成正比。</p>
 </blockquote>
@@ -140,14 +141,14 @@
 </blockquote>
 <p>上面代码中，由于 f() 被嵌套在了 cal() ，而 f(n) 的时间复杂度为 O(n) ，因此套用刚才的结论和公式可以得到整个 cal() 的时间复杂度为 <code>O(n²)</code>。</p>
 <p><br></p>
-<h3 id="四、几种常见时间复杂度分析"><a href="#四、几种常见时间复杂度分析" class="headerlink" title="四、几种常见时间复杂度分析"></a>四、几种常见时间复杂度分析</h3><p><img src="/2018/10/03/数据结构与算法之美-复杂度分析(上)/3.jpg" alt="Alt text"></p>
+<h3 id="四、几种常见时间复杂度分析"><a href="#四、几种常见时间复杂度分析" class="headerlink" title="四、几种常见时间复杂度分析"></a>四、几种常见时间复杂度分析</h3><p><img src="/2018/10/03/数据结构与算法之美-复杂度分析/3.jpg" alt="Alt text"></p>
 <p>常用的复杂度量级有以上几个，他们可以粗略地分为 <strong>多项式量级</strong> 和 <strong>非多项式量级</strong></p>
 <h4 id="非多项式量级"><a href="#非多项式量级" class="headerlink" title="非多项式量级"></a><strong>非多项式量级</strong></h4><p><strong>非多项式量级</strong>只有两个 <strong>O(2<sup>n</sup>)</strong> 和 <strong>O(n!)</strong>。<br>非多项式量级的算法有一个特点，当 n 的规模越来越大时，非多项式量级的算法的执行时间会急剧增加，求解问题的执行时间也会无限增长，因此<strong>非多项式量级的算法是非常低效的算法</strong>。<strong>一般把非多项式量级的算法问题叫做非确定多项式问题</strong>。</p>
 <h4 id="多项式量级"><a href="#多项式量级" class="headerlink" title="多项式量级"></a><strong>多项式量级</strong></h4><p><strong>1. O(1)</strong></p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">int</span> j = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">int</span> sum = i + j;</span><br></pre></td></tr></table></figure>
 <p>O(1) 是常量级时间复杂度的一种表示方法；<strong>只要代码的执行时间不随着 n 规模的增大而增长，或者说代码中没有循环或递归语句，那么其时间复杂度都是 O(1)</strong> 。</p>
 <p><strong>2. O(logn) 、 O(nlogn)</strong><br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> (i &lt;= n) &#123;</span><br><span class="line">    i = i * <span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>上面代码中第 3 行执行的次数最多，且每循环一次就乘以 2 ，实际上这就是一个等比数列<br><img src="/2018/10/03/数据结构与算法之美-复杂度分析(上)/4.jpg" alt="Alt text">我们如果求出 x 的值就能知道代码的执行次数，2<sup>x</sup> = n ，所以 x = log<sub>2</sub>n ，所以这段代码的时间复杂度就是 O(log<sub>2</sub>n)。<strong>实际上不论以 2 为底还是其他数字，我们都把所有对数阶的时间复杂度写成 O(logn)；因为对数之间是可以互相转换的。</strong></p>
+<p>上面代码中第 3 行执行的次数最多，且每循环一次就乘以 2 ，实际上这就是一个等比数列<br><img src="/2018/10/03/数据结构与算法之美-复杂度分析/4.jpg" alt="Alt text">我们如果求出 x 的值就能知道代码的执行次数，2<sup>x</sup> = n ，所以 x = log<sub>2</sub>n ，所以这段代码的时间复杂度就是 O(log<sub>2</sub>n)。<strong>实际上不论以 2 为底还是其他数字，我们都把所有对数阶的时间复杂度写成 O(logn)；因为对数之间是可以互相转换的。</strong></p>
 <p>将上述时间复杂度为 O(logn) 的代码循环执行 n 遍，它的时间复杂度便为 O(nlogn)；这两种都是很常见的算法的时间复杂度，如归并排序和快速排序。</p>
 <p><strong>3. O(m+n) 、O(m*n)</strong><br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">cal</span><span class="params">(<span class="keyword">int</span> m,<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> sum1 = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (; i &lt; m; ++i) &#123;</span><br><span class="line">        sum1 = sum1 + i;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> sum2 = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> j = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (; j &lt; n; ++j) &#123;</span><br><span class="line">        sum2 = sum2 + j</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> sum1 + sum2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>上面代码中，m 和 n 是表示两个数据规模，不能用简单的加法规则省略掉其中一个，因此上面代码的时间复杂度为 O(m+n)；但有不同数据规模时乘法法则依然有效。</p>
