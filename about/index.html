@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<!DOCTYPE html>
 <html>
   <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -17,92 +17,107 @@
 </head>  
   <body>   
     
-      <header class="header">
-	
-  <nav class="header-nav">        
+      <header class="header-wrapper">
 
-    <span class="iconfont icon-menu mobile-toggle"></span>   	
-
-    <div class="header-logo">
+  <nav class="inner">
+    <div class="title">
       <a href="/">
-        <img class="header-logo-img" src="/images/logo.jpg">
+        <img class="logo" src="/images/logo.jpg">
       </a>
     </div>
 
-    <div class="header-menu">          
-              
-          
-            <a class="header-menu-link" id="header-menu-home" href="/">
-              <i class="iconfont icon-home">  
-            </i></a>     
-          
-              
-          
-            <a class="header-menu-link" id="header-menu-archives" href="/archives">
-              <i class="iconfont icon-archives">  
-            </i></a>     
-          
-              
-          
-            <a class="header-menu-link" id="header-menu-tags" href="/tags">
-              <i class="iconfont icon-tags">  
-            </i></a>     
-          
-              
-          
-            <a class="header-menu-link" id="header-menu-about" href="/about">
-              <i class="iconfont icon-about">  
-            </i></a>     
-          
-              
-          
-              <a class="header-menu-link" id="header-menu-search">
-                <i class="iconfont icon-search">  
-              </i></a>
-          
-                  
-    </div>  
-    
+    <ul class="menu">
+      
+      
+      <li class="item">
+        <a class="link" id="menu-home" href="/">
+          <i class="iconfont icon-home">
+        </i></a>
+      </li>
+      
+      
+      
+      <li class="item">
+        <a class="link" id="menu-archives" href="/archives">
+          <i class="iconfont icon-archives">
+        </i></a>
+      </li>
+      
+      
+      
+      <li class="item">
+        <a class="link" id="menu-tags" href="/tags">
+          <i class="iconfont icon-tags">
+        </i></a>
+      </li>
+      
+      
+      
+      <li class="item">
+        <a class="link" id="menu-about" href="/about">
+          <i class="iconfont icon-about">
+        </i></a>
+      </li>
+      
+      
+      
+      <li class="item">
+        <a class="link" id="menu-search">
+          <i class="iconfont icon-search">
+        </i></a>
+        
+
+        
+      
+    </li></ul>
   </nav>
 </header>
 
-   
+<header class="mobile-header-wrapper">
+  <i id="mobile-toggle" class="iconfont icon-menu mobile-toggle"></i>
+</header>   
 
       <div class="container">       
           
           
-            <section class="main slideDownMin">
+            <div class="container-inner slideDownMin">
           
 
-          <section class="block fadeIn slideDownMin">
-	<span class="page-title">关于</span>
-	<div class="post-content"><h2 id="这是一篇关于我自己的文章"><a href="#这是一篇关于我自己的文章" class="headerlink" title="这是一篇关于我自己的文章"></a>这是一篇关于我自己的文章</h2></div>
+          <section class="fadeIn slideDownMin">
+
+	
+  	
+<div class="page-name">
+    <i class="iconfont icon-page-about"></i>
+    <span class="name">关于</span>
+</div>
+
+
+
+	<div class="typo">
+		<h2 id="这是一篇关于我自己的文章"><a href="#这是一篇关于我自己的文章" class="headerlink" title="这是一篇关于我自己的文章"></a>这是一篇关于我自己的文章</h2>
+	</div>
+
 </section>
-          </section> 
+          </div> 
       </div>            
     
-    <a id="backTop">
-      <span>
-        <i class="iconfont icon-backtotop"></i>
-      </span>
-    </a> 
+        <i id="toTop" class="iconfont icon-backtotop"></i>
 
   
-    
-    <div class="search-container sildeUpMin">
-        <div class="search-header">
-            <input type="text" placeholder="输入你想搜索的" id="search-input" class="search-input">
-            <span class="search-cancel">
-                <i class="iconfont icon-cancel">
-            </i></span>
-        </div>
-        <div id="search-result" class="search-result"></div>
+    <div class="none" id="search">
+    <div class="header">
+        <input type="text" placeholder="输入你想搜索的" id="search-input" class="input">
+        
+        <i id="search-cancel" class="iconfont icon-cancel"></i>
     </div>
- 
+
+    <div id="search-result" class="result"></div>
+</div>
      <div class="mobile-menu">      
 
       
-      <img class="mobile-menu-icon" src="/images/favicon.jpg">   
+      <img class="mobile-menu-icon" src="/images/favicon.jpg">  
       
 
          
@@ -136,8 +151,22 @@
             
          
       
-</div>        
+</div>
+        
     
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?bfd38c7d7ea9dec90885daa5a63742b4"; 
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
 
 
 
@@ -145,28 +174,21 @@
     
 
 
+<footer class="footer">
+	<div class="inner">
+		<div class="copyright">
+			&copy;
+			
+			2019 -
+			
+			2020
+			Kite
 
-
-<footer id="footer">	    
-
-		
-		<div class="footer-copyright">
-		&copy;
-				
-		2018-
-		
-		2019		
-	
-		Kite
-		<br>
-
-		Theme By
-		<a href="https://github.com/Lemonreds/hexo-theme-Nayo" target="_blank">Nayo</a>	
-		</div>			
-	 
+			<br>
+			By <a href="https://hexo.io" target="_blank">Hexo</a> Theme <a href="https://github.com/Lemonreds/hexo-theme-Nayo" target="_blank">Nayo</a>
+		</div>
+	</div>
 </footer>   
-
-  
 
     <script src="/nayo.bundle.js"></script>           
   </body>        
