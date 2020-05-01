@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
 <html>
   <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -17,116 +17,90 @@
 </head>  
   <body>   
     
-      <header class="header-wrapper">
+      <header class="header">
+	
+  <nav class="header-nav">        
 
-  <nav class="inner">
-    <div class="title">
+    <span class="iconfont icon-menu mobile-toggle"></span>   	
+
+    <div class="header-logo">
       <a href="/">
-        <img class="logo" src="/images/logo.jpg">
+        <img class="header-logo-img" src="/images/logo.jpg">
       </a>
     </div>
 
-    <ul class="menu">
-      
-      
-      <li class="item">
-        <a class="link" id="menu-home" href="/">
-          <i class="iconfont icon-home">
-        </i></a>
-      </li>
-      
-      
-      
-      <li class="item">
-        <a class="link" id="menu-archives" href="/archives">
-          <i class="iconfont icon-archives">
-        </i></a>
-      </li>
-      
-      
-      
-      <li class="item">
-        <a class="link" id="menu-tags" href="/tags">
-          <i class="iconfont icon-tags">
-        </i></a>
-      </li>
-      
-      
-      
-      <li class="item">
-        <a class="link" id="menu-about" href="/about">
-          <i class="iconfont icon-about">
-        </i></a>
-      </li>
-      
-      
-      
-      <li class="item">
-        <a class="link" id="menu-search">
-          <i class="iconfont icon-search">
-        </i></a>
-        
-
-        
-      
-    </li></ul>
+    <div class="header-menu">          
+              
+          
+            <a class="header-menu-link" id="header-menu-home" href="/">
+              <i class="iconfont icon-home">  
+            </i></a>     
+          
+              
+          
+            <a class="header-menu-link" id="header-menu-archives" href="/archives">
+              <i class="iconfont icon-archives">  
+            </i></a>     
+          
+              
+          
+            <a class="header-menu-link" id="header-menu-tags" href="/tags">
+              <i class="iconfont icon-tags">  
+            </i></a>     
+          
+              
+          
+            <a class="header-menu-link" id="header-menu-about" href="/about">
+              <i class="iconfont icon-about">  
+            </i></a>     
+          
+              
+          
+              <a class="header-menu-link" id="header-menu-search">
+                <i class="iconfont icon-search">  
+              </i></a>
+          
+                  
+    </div>  
+    
   </nav>
 </header>
 
-<header class="mobile-header-wrapper">
-  <i id="mobile-toggle" class="iconfont icon-menu mobile-toggle"></i>
-</header>   
+   
 
       <div class="container">       
           
           
-            <div class="container-inner">  
+            <section class="main">  
           
 
-          <article class="post slideDownMin">
+          <article class="post">
   
-	
-<div class="header">
-		<p class="title">	
-			JS实现数据结构与算法：数组
-		</p>
-		<div class="info">	
-			<time>
-				10月 20, 2018
-			</time>
+	<div class="post-header">
 
+	<p class="post-title">	
+		JS实现数据结构与算法：数组
+	</p>
 			
-			
-				<i class="iconfont icon-words"></i>
-				<span class="words">2
-				</span>
-			
-		</div>
+
+	<div class="meta-info">	
+	<span>
+		10月 20, 2018
+	</span>
+
+	
+	
+		<i class="iconfont icon-words"></i>
+		<span>
+			2
+		</span>
+	
+</div>
+
 </div> 
-	
+	 
 
-    <script type="text/x-mathjax-config">
-        var post = document.getElementsByClassName("post")[0];  
-        MathJax.Hub.Config({
-            showProcessingMessages: false,
-            messageStyle: "none",    
-            tex2jax: {
-                inlineMath:  [ ["$", "$"] , ["\\(","\\)"]],
-                displayMath: [ ["$$","$$"] , ["\\[","\\]"]],
-                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code','a'],
-            },
-            "HTML-CSS": {            
-                showMathMenu: false
-            }
-        });
-        MathJax.Hub.Queue(["Typeset",MathJax.Hub,post]);
-    </script>
-    <style>.MathJax{outline:0;}</style>
-
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.2/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
- 
-
-	  <div class="typo post-content ">
+	  <div class="typo post-content slideDownMin">
 
 		
 
@@ -138,78 +112,106 @@
 	  </div>     
 	  
 
-	<div class="bottom">
-  <div class="other">
-    <div class="meta">
-      
+	<div class="post-footer">
 
-      
-      <i class="iconfont icon-tag"></i>
-      <a class="tag-link" href="/tags/数据结构与算法之美/">数据结构与算法之美</a>
-      
-    </div>
+  <div class="post-footer-other">
+      <span class="post-footer-item">
+        
 
-    <div class="operate">
-      
-      <span class="text">Share</span>
-      <ul class="share">
-	   			             
-        <li class="iconfont 
-		icon-share-qq 
-		-mob-share-qq 
-		item"></li>		
-   	   			             
-        <li class="iconfont 
-		icon-share-weixin 
-		-mob-share-weixin 
-		item"></li>		
-   	   			             
-        <li class="iconfont 
-		icon-share-weibo 
-		-mob-share-weibo 
-		item"></li>		
-   	   
-</ul>	
 
-<script id="-mob-share" src="https://f1.webshare.mob.com/code/mob-share.js?appkey=21d601593a1de"></script>
-      
-    </div>
+
+
+<span class="donate-btn">
+	<span class="iconfont icon-donate"></span>
+</span>
+
+
+<div id="donate-box" class="sildeUpMin">
+
+	<span class="donate-cancel iconfont icon-cancel"></span>
+
+	<div class="donate-img-box">
+		<img id="donate-qr-wechat" class="noLazyLoad donate-img" src="/images/donate1.jpg" alt="No Donate Image!">	
+		<img id="donate-qr-alipay" class="noLazyLoad donate-img" src="/images/donate2.jpg" alt="No Donate Image!">	
+	</div>
+
+	<span class="donate-word">or buy me a cup of tea</span>
+
+	<div class="donate-list">
+		<span class="iconfont icon-donate-wechat"></span>
+		<span class="iconfont icon-donate-alipay"></span>
+	</div>
+
+</div>
+
+ 
+      </span>           
+      <span class="post-footer-item">
+        
+	
+<script id="-mob-share" src="http://f1.webshare.mob.com/code/mob-share.js?appkey=21d601593a1de"></script>
+	
+	<span class="share-btn">
+	<span class="iconfont icon-share"></span>
+	</span>
+
+
+	<div class="-mob-share sildeUpMin">
+		<div class="-mob-inner">
+		   			             
+            <a class="iconfont icon-share-weixin -mob-share-link"></a>		
+     	   			             
+            <a class="iconfont icon-share-weibo -mob-share-link"></a>		
+     	   			             
+            <a class="iconfont icon-share-twitter -mob-share-link"></a>		
+     	   			             
+            <a class="iconfont icon-share-google -mob-share-link"></a>		
+     	   
+		</div>
+	</div>	
+
+      </span>           
+  </div>  
+
+  <div class="post-footer-meta">
+        	
+
+        
+          <i class="iconfont icon-tag"></i>     
+            <a class="tag-link" href="/tags/数据结构与算法之美/">数据结构与算法之美</a>    
+        	
   </div>
 
+</div>
 
+
+<nav class="post-footer-nav">
   
-  <nav class="nav">
-    <div class="link">
-      
-      <a href="/2018/10/16/数据结构与算法-数组/" class="link-wrap">
-        <strong class="caption">older</strong>
-        
-        <span class="title">
-          数据结构与算法：数组
-        </span>
+    <div class="post-footer-link">
+      <a href="/2018/10/25/《三体》中的思想实验(四)：死神永生(上)/" id="post-nav-newer" class="post-nav-link-wrap">
+        <strong class="post-nav-caption">newer</strong>
+           
+          <a class="post-nav-title" href="/2018/10/25/《三体》中的思想实验(四)：死神永生(上)/">
+          《三体》中的思想实验(四)：死神永生(上)</a>
       </a>
-      
     </div>
-    <div class="link">
-      
-      <a href="/2018/10/25/《三体》中的思想实验(四)：死神永生(上)/" class="link-wrap">
-        <strong class="caption">newer</strong>
-        
-        <span class="title">
-          《三体》中的思想实验(四)：死神永生(上)
-        </span>
-      </a>
-      
-    </div>
-  </nav>
   
-</div> 
+  
+    <div class="post-footer-link">
+      <a href="/2018/10/16/数据结构与算法-数组/" id="post-nav-older" class="post-nav-link-wrap">
+        <strong class="post-nav-caption">older</strong>
+        
+          <a class="post-nav-title" href="/2018/10/16/数据结构与算法-数组/">
+          数据结构与算法：数组</a>
+      </a>
+    </div>
+  
+</nav>
+ 
 	
-<div class="comment">
 
-    
 
-    <div id="comment">
+    <div id="comment">   
     </div>
 
     <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
@@ -218,39 +220,55 @@
 
     <script>
         new Valine({
-            el: '#comment',
-            notify: false,
-            verify: false,
-            app_id: 'cFM0eCo0CQ9xmBXmHi1eltol-gzGzoHsz',
-            app_key: 'oh9tizsnvV2vNvWgqEvoNtQO',
-            path: window.location.pathname,
-            avatar: 'mm',
-            guest_info: ['nick', 'mail']
+        el: '#comment',
+        notify:false, 
+        verify:false, 
+        app_id: 'NFcUbxltD0wS7eCCGTu5ey8k-gzGzoHsz',
+        app_key: '2IB9EctIUwYFhiMjHXNJJnc9',  
+        path:window.location.pathname, 
+        avatar:'mm' ,
+        guest_info:['nick','mail']
         });
     </script>
-    
-</div>	
+	
 </article>
 
-          </div> 
+	<div class="toc-container">
+			<div class="toc-sidebar">
+			<p class="toc-title">
+				CONTENT
+			</p>
+			<div class="toc-list">
+				
+			</div>
+		</div>
+	</div>
+
+          </section> 
       </div>            
     
-        <i id="toTop" class="iconfont icon-backtotop"></i>
+    <a id="backTop">
+      <span>
+        <i class="iconfont icon-backtotop"></i>
+      </span>
+    </a> 
 
   
-    <div class="none" id="search">
-    <div class="header">
-        <input type="text" placeholder="输入你想搜索的" id="search-input" class="input">
-        
-        <i id="search-cancel" class="iconfont icon-cancel"></i>
+    
+    <div class="search-container sildeUpMin">
+        <div class="search-header">
+            <input type="text" placeholder="输入你想搜索的" id="search-input" class="search-input">
+            <span class="search-cancel">
+                <i class="iconfont icon-cancel">
+            </i></span>
+        </div>
+        <div id="search-result" class="search-result"></div>
     </div>
-
-    <div id="search-result" class="result"></div>
-</div>
+ 
      <div class="mobile-menu">      
 
       
-      <img class="mobile-menu-icon" src="/images/favicon.jpg">  
+      <img class="mobile-menu-icon" src="/images/favicon.jpg">   
       
 
          
@@ -284,22 +302,8 @@
             
          
       
-</div>
-        
+</div>        
     
-
-
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?bfd38c7d7ea9dec90885daa5a63742b4"; 
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-
-
 
 
 
@@ -307,21 +311,28 @@ var _hmt = _hmt || [];
     
 
 
-<footer class="footer">
-	<div class="inner">
-		<div class="copyright">
-			&copy;
-			
-			2019 -
-			
-			2020
-			Kite
 
-			<br>
-			By <a href="https://hexo.io" target="_blank">Hexo</a> Theme <a href="https://github.com/Lemonreds/hexo-theme-Nayo" target="_blank">Nayo</a>
-		</div>
-	</div>
+
+<footer id="footer">	    
+
+		
+		<div class="footer-copyright">
+		&copy;
+				
+		2018-
+		
+		2020		
+	
+		Kite
+		<br>
+
+		Theme By
+		<a href="https://github.com/Lemonreds/hexo-theme-Nayo" target="_blank">Nayo</a>	
+		</div>			
+	 
 </footer>   
+
+  
 
     <script src="/nayo.bundle.js"></script>           
   </body>        
