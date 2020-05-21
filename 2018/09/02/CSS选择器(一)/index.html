@@ -20,35 +20,53 @@
       <header class="header">
 	
   <nav class="header-nav">        
-   
+
     <span class="iconfont icon-menu mobile-toggle"></span>   	
+
+    <div class="header-logo">
+      <a href="/">
+        <img class="header-logo-img" src="/images/logo.jpg">
+      </a>
+    </div>
 
     <div class="header-menu">          
               
-            
-              <a class="header-menu-link" id="header-menu-home" href="/">首页</a>     
-            
-            
-            
-              <a class="header-menu-link" id="header-menu-archives" href="/archives">归档</a>     
-            
-            
-            
-              <a class="header-menu-link" id="header-menu-tags" href="/tags">标签</a>     
-            
-            
-            
-              <a class="header-menu-link" id="header-menu-about" href="/about">关于</a>     
-            
-            
-            
-              <a class="iconfont icon-menu-search header-menu-link" id="header-menu-search"></a>
-            
-                
+          
+            <a class="header-menu-link" id="header-menu-home" href="/">
+              <i class="iconfont icon-home">  
+            </i></a>     
+          
+              
+          
+            <a class="header-menu-link" id="header-menu-archives" href="/archives">
+              <i class="iconfont icon-archives">  
+            </i></a>     
+          
+              
+          
+            <a class="header-menu-link" id="header-menu-tags" href="/tags">
+              <i class="iconfont icon-tags">  
+            </i></a>     
+          
+              
+          
+            <a class="header-menu-link" id="header-menu-about" href="/about">
+              <i class="iconfont icon-about">  
+            </i></a>     
+          
+              
+          
+              <a class="header-menu-link" id="header-menu-search">
+                <i class="iconfont icon-search">  
+              </i></a>
+          
+                  
     </div>  
     
   </nav>
-</header>   
+</header>
+
+   
 
       <div class="container">       
           
@@ -82,7 +100,7 @@
 </div> 
 	 
 
-	  <div class="post-content slideDownMin">
+	  <div class="typo post-content slideDownMin">
 
 		
 
@@ -123,7 +141,7 @@
 </blockquote>
 <p>比如:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> * &#123;<span class="attribute">color</span>:green&#125;</span><br></pre></td></tr></table></figure></p>
 <p><strong>这样就会把p包含的所有元素的文本(不包括p本身的文本！)成绿色。</strong><br>还可以用它来构成非子选择符<br>例如:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">section</span> * <span class="selector-tag">a</span> &#123;<span class="attribute">font-weight</span>:bold;&#125;</span><br></pre></td></tr></table></figure></p>
-<p><img src="/2018/09/02/CSS选择器(一)/5.png" alt="Alt text"></p>
+<p><img src="/images/placeholder.png" alt="Alt text" data-src="/2018/09/02/CSS选择器(一)/5.png" class="lazyload"></p>
 <p>可以看到并没有选中section的子元素a，而是选中了section的孙子元素a。也就是说，任何section的孙子元素，而非子元素a都会被选中，与a的父元素没有关系。</p>
 <hr>
 <p><br></p>
@@ -189,29 +207,41 @@
 	  </div>     
 	  
 
-	
-<div class="post-meta">
-      	
+	<div class="post-footer">
 
-      
-        <i class="iconfont icon-tag"></i>     
-          <a class="tag-link" href="/tags/CSS设计指南笔记/">CSS设计指南笔记</a>    
-      	
+  <div class="post-footer-other">
+      <span class="post-footer-item">
+        
+
+
+
+
+<span class="donate-btn">
+	<span class="iconfont icon-donate"></span>
+</span>
+
+
+<div id="donate-box" class="sildeUpMin">
+
+	<span class="donate-cancel iconfont icon-cancel"></span>
+
+	<div class="donate-img-box">
+		<img id="donate-qr-wechat" class="noLazyLoad donate-img lazyload" src="/images/placeholder.png" alt="No Donate Image!" data-src="/images/donate1.jpg">	
+		<img id="donate-qr-alipay" class="noLazyLoad donate-img lazyload" src="/images/placeholder.png" alt="No Donate Image!" data-src="/images/donate2.jpg">	
+	</div>
+
+	<span class="donate-word">or buy me a cup of tea</span>
+
+	<div class="donate-list">
+		<span class="iconfont icon-donate-wechat"></span>
+		<span class="iconfont icon-donate-alipay"></span>
+	</div>
+
 </div>
 
-
-
-
-
-<div class="post-footer">
-  <div class="pf-left">
-      <img class="pf-avatar lazyload" src="/images/placeholder.png" data-src="/images/header.jpg">
-      <p class="pf-des">Keep code、write and speak.</p>
-  </div>
-
-  <div class="pf-right">           
-      <div class="pf-links">
-         
+ 
+      </span>           
+      <span class="post-footer-item">
         
 	
 <script id="-mob-share" src="http://f1.webshare.mob.com/code/mob-share.js?appkey=21d601593a1de"></script>
@@ -222,42 +252,87 @@
 
 
 	<div class="-mob-share sildeUpMin">
+		<div class="-mob-inner">
 		   			             
-            <a class="iconfont icon-share-weixin -mob-share-weixin"></a>		
+            <a class="iconfont icon-share-weixin -mob-share-link"></a>		
      	   			             
-            <a class="iconfont icon-share-weibo -mob-share-weibo"></a>		
+            <a class="iconfont icon-share-weibo -mob-share-link"></a>		
      	   			             
-            <a class="iconfont icon-share-douban -mob-share-douban"></a>		
+            <a class="iconfont icon-share-twitter -mob-share-link"></a>		
      	   			             
-            <a class="iconfont icon-share-facebook -mob-share-facebook"></a>		
-     	   			             
-            <a class="iconfont icon-share-twitter -mob-share-twitter"></a>		
-     	   			             
-            <a class="iconfont icon-share-google -mob-share-google"></a>		
+            <a class="iconfont icon-share-google -mob-share-link"></a>		
      	   
+		</div>
 	</div>	
 
-      </div>  
-    <nav class="pf-paginator">
-      
-         
-          <a href="/2018/09/23/CSS选择器(二)/" data-hover="CSS设计指南：CSS选择器(二)">上一篇</a>      
-            
+      </span>           
+  </div>  
+
+  <div class="post-footer-meta">
+        	
+
         
-      
-        
-        <a href="/2018/08/26/hello-world/" data-hover="Hello World"> 下一篇</a>
-            
-  </nav>   
+          <i class="iconfont icon-tag"></i>     
+            <a class="tag-link" href="/tags/CSS设计指南笔记/">CSS设计指南笔记</a>    
+        	
   </div>
-</div> 
+
+</div>
+
+
+<nav class="post-footer-nav">
+  
+    <div class="post-footer-link">
+      <a href="/2018/09/23/CSS选择器(二)/" id="post-nav-newer" class="post-nav-link-wrap">
+        <strong class="post-nav-caption">newer</strong>
+           
+          <a class="post-nav-title" href="/2018/09/23/CSS选择器(二)/">
+          CSS设计指南：CSS选择器(二)</a>
+      </a>
+    </div>
+  
+  
+    <div class="post-footer-link">
+      <a href="/2018/08/26/hello-world/" id="post-nav-older" class="post-nav-link-wrap">
+        <strong class="post-nav-caption">older</strong>
+        
+          <a class="post-nav-title" href="/2018/08/26/hello-world/">
+          Hello World</a>
+      </a>
+    </div>
+  
+</nav>
+ 
 	
+
+
+    <div id="comment">   
+    </div>
+
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+
+    <script src="//unpkg.com/valine@v1.1.8-beta/dist/Valine.min.js"></script>
+
+    <script>
+        new Valine({
+        el: '#comment',
+        notify:false, 
+        verify:false, 
+        app_id: 'NFcUbxltD0wS7eCCGTu5ey8k-gzGzoHsz',
+        app_key: '2IB9EctIUwYFhiMjHXNJJnc9',  
+        path:window.location.pathname, 
+        avatar:'mm' ,
+        guest_info:['nick','mail']
+        });
+    </script>
 	
 </article>
 
 	<div class="toc-container">
-			<div class="sidebar">
-			<h4 class="toc-title">目录</h4>
+			<div class="toc-sidebar">
+			<p class="toc-title">
+				CONTENT
+			</p>
 			<div class="toc-list">
 				<ol class="toc-inner"><li class="toc-inner-item toc-inner-level-2"><a class="toc-inner-link" href="#CSS选择器-一"><span class="toc-inner-text">CSS选择器(一)</span></a><ol class="toc-inner-child"><li class="toc-inner-item toc-inner-level-3"><a class="toc-inner-link" href="#1-1、上下文选择器"><span class="toc-inner-text">1.1、上下文选择器</span></a></li><li class="toc-inner-item toc-inner-level-3"><a class="toc-inner-link" href="#1-2、特殊的上下文选择器"><span class="toc-inner-text">1.2、特殊的上下文选择器</span></a><ol class="toc-inner-child"><li class="toc-inner-item toc-inner-level-4"><a class="toc-inner-link" href="#子选择符-gt"><span class="toc-inner-text">子选择符 &gt;</span></a></li><li class="toc-inner-item toc-inner-level-4"><a class="toc-inner-link" href="#紧邻同胞选择符"><span class="toc-inner-text">紧邻同胞选择符  +</span></a></li><li class="toc-inner-item toc-inner-level-4"><a class="toc-inner-link" href="#一般同胞选择符"><span class="toc-inner-text">一般同胞选择符 ~</span></a></li><li class="toc-inner-item toc-inner-level-4"><a class="toc-inner-link" href="#通用选择符"><span class="toc-inner-text">通用选择符 *</span></a></li></ol></li><li class="toc-inner-item toc-inner-level-3"><a class="toc-inner-link" href="#2-1、类选择器"><span class="toc-inner-text">2.1、类选择器</span></a></li><li class="toc-inner-item toc-inner-level-3"><a class="toc-inner-link" href="#2-2、类选择符"><span class="toc-inner-text">2.2、类选择符</span></a></li><li class="toc-inner-item toc-inner-level-3"><a class="toc-inner-link" href="#2-3、标签带类选择符"><span class="toc-inner-text">2.3、标签带类选择符</span></a></li><li class="toc-inner-item toc-inner-level-3"><a class="toc-inner-link" href="#2-4、多类选择符"><span class="toc-inner-text">2.4、多类选择符</span></a></li><li class="toc-inner-item toc-inner-level-3"><a class="toc-inner-link" href="#3-1、ID选择器"><span class="toc-inner-text">3.1、ID选择器</span></a></li><li class="toc-inner-item toc-inner-level-3"><a class="toc-inner-link" href="#3-2、类选择器与ID选择器的区别"><span class="toc-inner-text">3.2、类选择器与ID选择器的区别</span></a></li></ol></li></ol>
 			</div>
@@ -277,8 +352,10 @@
     
     <div class="search-container sildeUpMin">
         <div class="search-header">
-            <input type="text" placeholder="输入你想搜索的" id="search-input" class="search-input">  
-            <span class="search-cancel iconfont icon-cancel"></span>
+            <input type="text" placeholder="输入你想搜索的" id="search-input" class="search-input">
+            <span class="search-cancel">
+                <i class="iconfont icon-cancel">
+            </i></span>
         </div>
         <div id="search-result" class="search-result"></div>
     </div>
@@ -322,19 +399,6 @@
       
 </div>        
     
-
-
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?bfd38c7d7ea9dec90885daa5a63742b4"; 
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-
-
 
 
 
